@@ -1,0 +1,34 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Maven
+target/
+.m2/
+*.class
+
+# IDE
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+.DS_Store
+.classpath
+.project
+.settings/
+
+# Build
+node_modules/
+dist/
+build/
+
+# Documentation
+README.md
+HELP.md
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore

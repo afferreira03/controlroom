@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: controlroom
+    
+  # ====================================
+  # MongoDB Configuration
+  # ====================================
+  data:
+    mongodb:
+      uri: ${SPRING_DATA_MONGODB_URI:mongodb://localhost:27017/controlroom}
+      database: ${SPRING_DATA_MONGODB_DATABASE:controlroom}
+      auto-index-creation: true
+
+  # ====================================
+  # Security & OAuth2/JWT Configuration
+  # ====================================
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI:http://localhost:8090/realms/controlroom}
+          jwk-set-uri: ${SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI:http://localhost:8090/realms/controlroom/protocol/openid-connect/certs}
+
+# ====================================
+# Actuator Health Check
+# ====================================
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when-authorized
